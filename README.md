@@ -43,19 +43,11 @@ To run and test the SQL script:
 
 ---
 
-## 5. CI/CD Pipeline Verification
-A GitHub Actions workflow is configured in `.github/workflows/validate-docs.yml` to automatically validate the repository structure and confirm all planning files exist.
-
-![CI/CD Green Build](docs/cicd-build.png)
-*(Note: Replace `docs/cicd-build.png` with a screenshot of your successful green Actions run from your GitHub repo).*
-
----
-
-## 6. Video Presentation Link
+## 5. Video Presentation Link
 Walkthrough and explanation of the ERD structure, REST API endpoint plan, role enforcement, and live SSMS database execution:
 * **YouTube Link (Unlisted):** add this now now
 
 ---
 
-## 7. AI Disclosure
+## 6. AI Disclosure
 AI tools were consulted during the initial brainstorming and formatting of the API route plans and relational constraints. All database designs, entity structures, and table mappings were analyzed, reviewed, and tested personally in SSMS.
