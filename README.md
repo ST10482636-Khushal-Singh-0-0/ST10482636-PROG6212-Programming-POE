@@ -45,7 +45,7 @@ To run and test the SQL script:
 
 ## 5. Video Presentation Link
 Walkthrough and explanation of the ERD structure, REST API endpoint plan, role enforcement, and live SSMS database execution:
-* **YouTube Link (Unlisted):** add this now now
+* **YouTube Link (Unlisted):** https://youtu.be/04soipyka1s?si=mCi02WOCRTkglHHg
 
 ---
 
