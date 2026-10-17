@@ -1,0 +1,483 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\TestSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Tests\\TestSession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\RaceDay.Tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Tests\\RaceDay.Tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\RaceDay.Api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\RaceDay.Api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\EnrolmentTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Tests\\EnrolmentTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\EventTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Tests\\EventTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\AuthTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Tests\\AuthTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\TestDatabaseFixture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Tests\\TestDatabaseFixture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\ResultsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Controllers\\ResultsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\EnrolmentsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Controllers\\EnrolmentsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\CategoriesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Controllers\\CategoriesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\EventsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Controllers\\EventsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\UsersController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Controllers\\UsersController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Filters\\AuthorizeRoleAttribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Filters\\AuthorizeRoleAttribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Services\\PasswordHasherService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Services\\PasswordHasherService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\DTOs\\EnrolmentDTOs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\DTOs\\EnrolmentDTOs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\DTOs\\EventDTOs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\DTOs\\EventDTOs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\DTOs\\AuthDTOs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\DTOs\\AuthDTOs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Data\\RaceDayDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Data\\RaceDayDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Models\\Result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Enrolment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Models\\Enrolment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\EventCategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Models\\EventCategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Models\\Event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Venue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Models\\Venue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RaceDay.Api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RaceDay.Api.csproj",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\RaceDay.Api.csproj",
+              "RelativeDocumentMoniker": "RaceDay.Api\\RaceDay.Api.csproj",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\RaceDay.Api.csproj",
+              "RelativeToolTip": "RaceDay.Api\\RaceDay.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-17T18:53:55.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Program.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Program.cs",
+              "RelativeToolTip": "RaceDay.Api\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAIwBUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:42:01.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RaceDay.Tests.csproj",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\RaceDay.Tests.csproj",
+              "RelativeDocumentMoniker": "RaceDay.Tests\\RaceDay.Tests.csproj",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\RaceDay.Tests.csproj",
+              "RelativeToolTip": "RaceDay.Tests\\RaceDay.Tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-17T18:54:47.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TestSession.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\TestSession.cs",
+              "RelativeDocumentMoniker": "RaceDay.Tests\\TestSession.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\TestSession.cs",
+              "RelativeToolTip": "RaceDay.Tests\\TestSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:44:40.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EnrolmentTests.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\EnrolmentTests.cs",
+              "RelativeDocumentMoniker": "RaceDay.Tests\\EnrolmentTests.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\EnrolmentTests.cs",
+              "RelativeToolTip": "RaceDay.Tests\\EnrolmentTests.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAIwEYAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:44:14.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EventTests.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\EventTests.cs",
+              "RelativeDocumentMoniker": "RaceDay.Tests\\EventTests.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\EventTests.cs",
+              "RelativeToolTip": "RaceDay.Tests\\EventTests.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAIwDMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:43:44.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthTests.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\AuthTests.cs",
+              "RelativeDocumentMoniker": "RaceDay.Tests\\AuthTests.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\AuthTests.cs",
+              "RelativeToolTip": "RaceDay.Tests\\AuthTests.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAIwEkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:43:22.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TestDatabaseFixture.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\TestDatabaseFixture.cs",
+              "RelativeDocumentMoniker": "RaceDay.Tests\\TestDatabaseFixture.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\TestDatabaseFixture.cs",
+              "RelativeToolTip": "RaceDay.Tests\\TestDatabaseFixture.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:43:01.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ResultsController.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\ResultsController.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Controllers\\ResultsController.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\ResultsController.cs",
+              "RelativeToolTip": "RaceDay.Api\\Controllers\\ResultsController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAIwF4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:41:43.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EnrolmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\EnrolmentsController.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Controllers\\EnrolmentsController.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\EnrolmentsController.cs",
+              "RelativeToolTip": "RaceDay.Api\\Controllers\\EnrolmentsController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAIwEcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:41:16.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "RaceDay.Api\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwDQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:41:03.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EventsController.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\EventsController.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Controllers\\EventsController.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\EventsController.cs",
+              "RelativeToolTip": "RaceDay.Api\\Controllers\\EventsController.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAIwIgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:40:42.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "RaceDay.Api\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwDQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:40:25.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "RaceDay.Api\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwFMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:40:06.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AuthorizeRoleAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Filters\\AuthorizeRoleAttribute.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Filters\\AuthorizeRoleAttribute.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Filters\\AuthorizeRoleAttribute.cs",
+              "RelativeToolTip": "RaceDay.Api\\Filters\\AuthorizeRoleAttribute.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwCkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:39:32.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PasswordHasherService.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Services\\PasswordHasherService.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Services\\PasswordHasherService.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Services\\PasswordHasherService.cs",
+              "RelativeToolTip": "RaceDay.Api\\Services\\PasswordHasherService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:39:06.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EnrolmentDTOs.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\DTOs\\EnrolmentDTOs.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\DTOs\\EnrolmentDTOs.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\DTOs\\EnrolmentDTOs.cs",
+              "RelativeToolTip": "RaceDay.Api\\DTOs\\EnrolmentDTOs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:38:39.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EventDTOs.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\DTOs\\EventDTOs.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\DTOs\\EventDTOs.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\DTOs\\EventDTOs.cs",
+              "RelativeToolTip": "RaceDay.Api\\DTOs\\EventDTOs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:38:26.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AuthDTOs.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\DTOs\\AuthDTOs.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\DTOs\\AuthDTOs.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\DTOs\\AuthDTOs.cs",
+              "RelativeToolTip": "RaceDay.Api\\DTOs\\AuthDTOs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:38:12.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RaceDayDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Data\\RaceDayDbContext.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Data\\RaceDayDbContext.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Data\\RaceDayDbContext.cs",
+              "RelativeToolTip": "RaceDay.Api\\Data\\RaceDayDbContext.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwB8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:37:42.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Result.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Result.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Models\\Result.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Result.cs",
+              "RelativeToolTip": "RaceDay.Api\\Models\\Result.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:37:13.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Enrolment.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Enrolment.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Models\\Enrolment.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Enrolment.cs",
+              "RelativeToolTip": "RaceDay.Api\\Models\\Enrolment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:37:00.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "EventCategory.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\EventCategory.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Models\\EventCategory.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\EventCategory.cs",
+              "RelativeToolTip": "RaceDay.Api\\Models\\EventCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:36:40.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Models\\Event.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Event.cs",
+              "RelativeToolTip": "RaceDay.Api\\Models\\Event.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:36:23.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Venue.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Venue.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Models\\Venue.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\Venue.cs",
+              "RelativeToolTip": "RaceDay.Api\\Models\\Venue.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:36:06.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\User.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\Models\\User.cs",
+              "RelativeToolTip": "RaceDay.Api\\Models\\User.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwA0AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T13:35:41.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "RaceDay.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\appsettings.json",
+              "RelativeToolTip": "RaceDay.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-17T13:32:43.071Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
