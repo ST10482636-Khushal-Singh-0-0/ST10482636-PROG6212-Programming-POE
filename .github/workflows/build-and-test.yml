@@ -17,13 +17,17 @@ jobs:
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '10.0.x'
+        dotnet-version: |
+          8.0.x
+          9.0.x
+          10.0.x
+        include-prerelease: true
 
     - name: Restore Dependencies
-      run: dotnet restore "Part 2/RaceDay.sln"
+      run: dotnet restore "./Part 2/RaceDay.sln"
 
     - name: Build Solution
-      run: dotnet build "Part 2/RaceDay.sln" --no-restore --configuration Release
+      run: dotnet build "./Part 2/RaceDay.sln" --no-restore --configuration Release
 
-    - name: Run Unit Tests
-      run: dotnet test "Part 2/RaceDay.Tests/RaceDay.Tests.csproj" --no-build --configuration Release --verbosity normal
+    - name: Run xUnit Unit Tests
+      run: dotnet test "./Part 2/RaceDay.Tests/RaceDay.Tests.csproj" --no-build --configuration Release --verbosity normal --logger "console;verbosity=detailed"
