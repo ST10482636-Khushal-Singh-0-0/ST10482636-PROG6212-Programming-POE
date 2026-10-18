@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "edJd0dzDffc=",
+  "dgSpecHash": "UHS8WZqJuSI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\RaceDay.Tests.csproj",
+  "projectFilePath": "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\RaceDay.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emeris\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\emeris\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",
