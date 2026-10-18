@@ -24,10 +24,10 @@ jobs:
         include-prerelease: true
 
     - name: Restore Dependencies
-      run: dotnet restore "./Part 2/RaceDay.sln"
+      run: dotnet restore **/RaceDay.sln
 
     - name: Build Solution
-      run: dotnet build "./Part 2/RaceDay.sln" --no-restore --configuration Release
+      run: dotnet build **/RaceDay.sln --no-restore --configuration Release
 
-    - name: Run xUnit Unit Tests
-      run: dotnet test "./Part 2/RaceDay.Tests/RaceDay.Tests.csproj" --no-build --configuration Release --verbosity normal --logger "console;verbosity=detailed"
+    - name: Run Unit Tests
+      run: dotnet test **/RaceDay.Tests.csproj --no-build --configuration Release --verbosity normal --logger "console;verbosity=detailed"
