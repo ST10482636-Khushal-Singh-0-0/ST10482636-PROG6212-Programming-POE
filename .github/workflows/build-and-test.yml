@@ -1,0 +1,33 @@
+name: RaceDay Part 2 CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main", "master", "part-2" ]
+  pull_request:
+    branches: [ "main", "master", "part-2" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: |
+          8.0.x
+          9.0.x
+          10.0.x
+        include-prerelease: true
+
+    - name: Restore Dependencies
+      run: dotnet restore "./Part 2/RaceDay.sln"
+
+    - name: Build Solution
+      run: dotnet build "./Part 2/RaceDay.sln" --no-restore --configuration Release
+
+    - name: Run xUnit Unit Tests
+      run: dotnet test "./Part 2/RaceDay.Tests/RaceDay.Tests.csproj" --no-build --configuration Release --verbosity normal --logger "console;verbosity=detailed"
