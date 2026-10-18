@@ -1,11 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\RaceDay.Api",
-    "\\RaceDay.Api\\Services",
-    "\\RaceDay.Tests",
-    "\\RaceDay.Tests\\obj"
+    ""
   ],
-  "SelectedNode": "\\RaceDay.Api\\RaceDay.Api.csproj",
   "PreviewInSolutionExplorer": false
 }
