@@ -52,6 +52,11 @@ The repository is modularly organized across both submission phases:
 
 ## 5. Video Presentation Link
 * **YouTube Link:** 
+1. **Part 1 Video Walkthrough:** https://youtu.be/04soipyka1s?si=mCi02WOCRTkglHHg
+- Explanation of the ERD structure, REST API endpoint plan, role enforcement, and live SSMS database execution.
+
+2. **Part 2 Video Demonstration:** NEEDSSSSSSSS TO RECORD
+- Demonstration of the compiled Web API, interactive testing in Swagger UI, session-based role authorization, and running passing unit tests.
 
 ---
 
