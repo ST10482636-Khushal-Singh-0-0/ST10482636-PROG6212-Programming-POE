@@ -1,0 +1,33 @@
+@model List<RaceDay.Web.Models.EnrolmentViewModel>
+@{ ViewData["Title"] = "My Enrolments"; }
+
+<h1 class="fw-bold mb-4">My Race Enrolments</h1>
+<div class="table-responsive bg-white shadow-sm rounded p-3">
+    <table class="table align-middle mb-0">
+        <thead class="table-dark">
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var badgeClass = item.Status switch
+                {
+                    "Confirmed" => "badge-confirmed",
+                    "Pending" => "badge-pending",
+                    _ => "badge-cancelled"
+                };
+                <tr>
+                    <td class="fw-semibold">@item.EventName</td>
+                    <td>@item.EventDate.ToString("dd MMM yyyy")</td>
+                    <td>@item.CategoryName</td>
+                    <td><span class="badge @badgeClass px-3 py-2">@item.Status</span></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

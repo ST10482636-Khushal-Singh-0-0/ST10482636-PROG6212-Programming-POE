@@ -2,136 +2,153 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RaceDay.Api.Data;
 using RaceDay.Api.DTOs;
-using RaceDay.Api.Filters;
 using RaceDay.Api.Models;
+using RaceDay.Api.Services;
 
 namespace RaceDay.Api.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class EventsController : ControllerBase
     {
         private readonly RaceDayDbContext _context;
+        private readonly IBlobStorageService _blobService;
+        private readonly IConfiguration _configuration;
 
-        public EventsController(RaceDayDbContext context)
+        public EventsController(
+            RaceDayDbContext context,
+            IBlobStorageService blobService,
+            IConfiguration configuration)
         {
             _context = context;
+            _blobService = blobService;
+            _configuration = configuration;
         }
 
+        // GET: api/events
         [HttpGet]
-        public async Task<IActionResult> GetAllEvents()
+        public async Task<ActionResult<IEnumerable<Event>>> GetEvents([FromQuery] int? organiserId)
         {
-            var events = await _context.Events
-                .Include(e => e.Venue)
-                .Include(e => e.Categories)
-                .Select(e => new
-                {
-                    e.EventId,
-                    e.Title,
-                    e.EventType,
-                    e.EventDate,
-                    e.Status,
-                    Venue = e.Venue != null ? e.Venue.VenueName : null,
-                    City = e.Venue != null ? e.Venue.City : null,
-                    CategoryCount = e.Categories.Count
-                })
-                .ToListAsync();
+            var query = _context.Events.AsQueryable();
 
-            return Ok(events);
+            if (organiserId.HasValue)
+            {
+                query = query.Where(e => e.OrganiserId == organiserId.Value);
+            }
+
+            return await query.OrderBy(e => e.Date).ToListAsync();
         }
 
+        // GET: api/events/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetEventById(int id)
+        public async Task<ActionResult<Event>> GetEvent(int id)
         {
-            var ev = await _context.Events
-                .Include(e => e.Venue)
-                .Include(e => e.Categories)
-                .FirstOrDefaultAsync(e => e.EventId == id);
+            var ev = await _context.Events.FindAsync(id);
+            if (ev == null) return NotFound();
 
-            if (ev == null) return NotFound(new { message = "Event not found." });
-            return Ok(ev);
+            return ev;
         }
 
+        // POST: api/events (Standard JSON endpoint from Part 2)
         [HttpPost]
-        [AuthorizeRole("Organiser")]
-        public async Task<IActionResult> CreateEvent([FromBody] CreateEventDto dto)
+        public async Task<ActionResult<Event>> CreateEvent([FromBody] Event newEvent)
         {
-            int organiserId = HttpContext.Session.GetInt32("UserId")!.Value;
+            _context.Events.Add(newEvent);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetEvent), new { id = newEvent.EventId }, newEvent);
+        }
+
+        // POST: api/events/with-banner (Part 3 Multipart Form + Azure Blob Upload)
+        [HttpPost("with-banner")]
+        public async Task<ActionResult<Event>> CreateEventWithBanner([FromForm] EventFormDto dto, IFormFile? bannerImage)
+        {
+            string? bannerUrl = null;
+
+            if (bannerImage != null && bannerImage.Length > 0)
+            {
+                var container = _configuration["BlobContainers:EventBanners"] ?? "event-banners";
+                bannerUrl = await _blobService.UploadFileAsync(bannerImage, container);
+            }
 
             var newEvent = new Event
             {
-                OrganiserId = organiserId,
-                VenueId = dto.VenueId,
-                Title = dto.Title,
+                Name = dto.Name,
                 Description = dto.Description,
+                Date = dto.Date,
+                Location = dto.Location,
+                Distance = dto.Distance,
                 EventType = dto.EventType,
-                EventDate = dto.EventDate,
-                Status = "Upcoming"
+                OrganiserId = dto.OrganiserId,
+                BannerImageUrl = bannerUrl
             };
 
             _context.Events.Add(newEvent);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetEventById), new { id = newEvent.EventId }, newEvent);
+            return CreatedAtAction(nameof(GetEvent), new { id = newEvent.EventId }, newEvent);
         }
 
+        // PUT: api/events/5 (Standard JSON endpoint from Part 2)
         [HttpPut("{id}")]
-        [AuthorizeRole("Organiser")]
-        public async Task<IActionResult> UpdateEvent(int id, [FromBody] UpdateEventDto dto)
+        public async Task<IActionResult> UpdateEvent(int id, [FromBody] Event updatedEvent)
         {
-            int organiserId = HttpContext.Session.GetInt32("UserId")!.Value;
-            var ev = await _context.Events.FindAsync(id);
+            var existingEvent = await _context.Events.FindAsync(id);
+            if (existingEvent == null) return NotFound();
 
-            if (ev == null) return NotFound(new { message = "Event not found." });
-            if (ev.OrganiserId != organiserId) return StatusCode(StatusCodes.Status403Forbidden, new { message = "You do not own this event." });
-
-            ev.VenueId = dto.VenueId;
-            ev.Title = dto.Title;
-            ev.Description = dto.Description;
-            ev.EventType = dto.EventType;
-            ev.EventDate = dto.EventDate;
-            ev.Status = dto.Status;
+            existingEvent.Name = updatedEvent.Name;
+            existingEvent.Description = updatedEvent.Description;
+            existingEvent.Date = updatedEvent.Date;
+            existingEvent.Location = updatedEvent.Location;
+            existingEvent.Distance = updatedEvent.Distance;
+            existingEvent.EventType = updatedEvent.EventType;
 
             await _context.SaveChangesAsync();
-            return Ok(ev);
+            return Ok(existingEvent);
         }
 
+        // PUT: api/events/5/with-banner (Part 3 Multipart Form + Azure Blob Replacement)
+        [HttpPut("{id}/with-banner")]
+        public async Task<IActionResult> UpdateEventWithBanner(int id, [FromForm] EventFormDto dto, IFormFile? bannerImage)
+        {
+            var existingEvent = await _context.Events.FindAsync(id);
+            if (existingEvent == null) return NotFound();
+
+            if (bannerImage != null && bannerImage.Length > 0)
+            {
+                var container = _configuration["BlobContainers:EventBanners"] ?? "event-banners";
+                await _blobService.DeleteFileAsync(existingEvent.BannerImageUrl, container);
+                existingEvent.BannerImageUrl = await _blobService.UploadFileAsync(bannerImage, container);
+            }
+
+            existingEvent.Name = dto.Name;
+            existingEvent.Description = dto.Description;
+            existingEvent.Date = dto.Date;
+            existingEvent.Location = dto.Location;
+            existingEvent.Distance = dto.Distance;
+            existingEvent.EventType = dto.EventType;
+
+            await _context.SaveChangesAsync();
+            return Ok(existingEvent);
+        }
+
+        // DELETE: api/events/5
         [HttpDelete("{id}")]
-        [AuthorizeRole("Organiser")]
         public async Task<IActionResult> DeleteEvent(int id)
         {
-            int organiserId = HttpContext.Session.GetInt32("UserId")!.Value;
-            var ev = await _context.Events.Include(e => e.Categories).ThenInclude(c => c.Enrolments).FirstOrDefaultAsync(e => e.EventId == id);
-
+            var ev = await _context.Events.FindAsync(id);
             if (ev == null) return NotFound();
-            if (ev.OrganiserId != organiserId) return StatusCode(StatusCodes.Status403Forbidden, new { message = "You do not own this event." });
 
-            bool hasEntries = ev.Categories.Any(c => c.Enrolments.Count > 0);
-            if (hasEntries) return BadRequest(new { message = "Cannot delete event with registered participants." });
+            if (!string.IsNullOrEmpty(ev.BannerImageUrl))
+            {
+                var container = _configuration["BlobContainers:EventBanners"] ?? "event-banners";
+                await _blobService.DeleteFileAsync(ev.BannerImageUrl, container);
+            }
 
             _context.Events.Remove(ev);
             await _context.SaveChangesAsync();
+
             return NoContent();
-        }
-
-        [HttpGet("{eventId}/enrolments")]
-        [AuthorizeRole("Organiser")]
-        public async Task<IActionResult> GetEventEnrolments(int eventId)
-        {
-            var roster = await _context.Enrolments
-                .Where(en => en.Category!.EventId == eventId)
-                .Select(en => new
-                {
-                    en.EnrolmentId,
-                    en.RaceNumber,
-                    ParticipantName = en.Participant!.FullName,
-                    en.Participant.Email,
-                    en.Category!.CategoryName,
-                    en.EnrolmentDate
-                })
-                .ToListAsync();
-
-            return Ok(roster);
         }
     }
 }
