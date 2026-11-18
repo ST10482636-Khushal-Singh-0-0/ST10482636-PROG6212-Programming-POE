@@ -1,0 +1,43 @@
+@model RaceDay.Web.Models.EventViewModel
+@{ ViewData["Title"] = "Create Event"; }
+
+<h1 class="fw-bold mb-4">Create New Race Event</h1>
+<div class="card border-0 shadow-sm p-4">
+    <form asp-action="CreateEvent" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label asp-for="Name" class="form-label">Event Name</label>
+                <input asp-for="Name" class="form-control" required />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="EventType" class="form-label">Event Type</label>
+                <input asp-for="EventType" class="form-control" placeholder="e.g. Marathon, Trail Run, Cycling" required />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Date" class="form-label">Event Date</label>
+                <input asp-for="Date" type="date" class="form-control" required />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Location" class="form-label">Location</label>
+                <input asp-for="Location" class="form-control" required />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Distance" class="form-label">Distance</label>
+                <input asp-for="Distance" class="form-control" placeholder="e.g. 21.1km / 42.2km" required />
+            </div>
+            <div class="col-12">
+                <label asp-for="Description" class="form-label">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="col-12">
+                <label asp-for="BannerImage" class="form-label">Event Banner Image (Uploaded to Azure Blob Storage)</label>
+                <input asp-for="BannerImage" type="file" class="form-control" accept="image/*" />
+            </div>
+        </div>
+        <div class="mt-4">
+            <button type="submit" class="btn btn-raceday px-4">Create Event</button>
+            <a asp-action="Dashboard" class="btn btn-outline-secondary ms-2">Cancel</a>
+        </div>
+    </form>
+</div>
