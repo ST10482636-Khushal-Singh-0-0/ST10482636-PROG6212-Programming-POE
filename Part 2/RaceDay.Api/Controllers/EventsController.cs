@@ -27,26 +27,67 @@ namespace RaceDay.Api.Controllers
 
         // GET: api/events
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Event>>> GetEvents([FromQuery] int? organiserId)
+        public async Task<ActionResult<IEnumerable<object>>> GetEvents([FromQuery] int? organiserId)
         {
-            var query = _context.Events.AsQueryable();
+            var query = _context.Events
+                .Include(e => e.Venue)
+                .Include(e => e.Categories)
+                .AsQueryable();
 
             if (organiserId.HasValue)
             {
                 query = query.Where(e => e.OrganiserId == organiserId.Value);
             }
 
-            return await query.OrderBy(e => e.Date).ToListAsync();
+            var events = await query.OrderBy(e => e.EventDate).ToListAsync();
+
+            return Ok(events.Select(e => new
+            {
+                e.EventId,
+                Id = e.EventId,
+                e.OrganiserId,
+                e.VenueId,
+                Location = e.Venue != null ? $"{e.Venue.VenueName}, {e.Venue.City}" : "TBA",
+                e.Title,
+                Name = e.Title,
+                e.Description,
+                e.EventType,
+                e.EventDate,
+                Date = e.EventDate,
+                e.Status,
+                e.BannerImageUrl,
+                Categories = e.Categories
+            }));
         }
 
         // GET: api/events/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Event>> GetEvent(int id)
+        public async Task<ActionResult<object>> GetEvent(int id)
         {
-            var ev = await _context.Events.FindAsync(id);
+            var ev = await _context.Events
+                .Include(e => e.Venue)
+                .Include(e => e.Categories)
+                .FirstOrDefaultAsync(e => e.EventId == id);
+
             if (ev == null) return NotFound();
 
-            return ev;
+            return Ok(new
+            {
+                ev.EventId,
+                Id = ev.EventId,
+                ev.OrganiserId,
+                ev.VenueId,
+                Location = ev.Venue != null ? $"{ev.Venue.VenueName}, {ev.Venue.City}" : "TBA",
+                ev.Title,
+                Name = ev.Title,
+                ev.Description,
+                ev.EventType,
+                ev.EventDate,
+                Date = ev.EventDate,
+                ev.Status,
+                ev.BannerImageUrl,
+                Categories = ev.Categories
+            });
         }
 
         // POST: api/events (Standard JSON endpoint from Part 2)
@@ -71,14 +112,16 @@ namespace RaceDay.Api.Controllers
                 bannerUrl = await _blobService.UploadFileAsync(bannerImage, container);
             }
 
+            var resolvedVenueId = await ResolveVenueIdAsync(dto.VenueId, dto.Location);
+
             var newEvent = new Event
             {
-                Name = dto.Name,
+                Title = dto.Title,
                 Description = dto.Description,
-                Date = dto.Date,
-                Location = dto.Location,
-                Distance = dto.Distance,
+                EventDate = dto.EventDate,
+                VenueId = resolvedVenueId,
                 EventType = dto.EventType,
+                Status = string.IsNullOrWhiteSpace(dto.Status) ? "Upcoming" : dto.Status,
                 OrganiserId = dto.OrganiserId,
                 BannerImageUrl = bannerUrl
             };
@@ -96,12 +139,12 @@ namespace RaceDay.Api.Controllers
             var existingEvent = await _context.Events.FindAsync(id);
             if (existingEvent == null) return NotFound();
 
-            existingEvent.Name = updatedEvent.Name;
+            existingEvent.Title = updatedEvent.Title;
             existingEvent.Description = updatedEvent.Description;
-            existingEvent.Date = updatedEvent.Date;
-            existingEvent.Location = updatedEvent.Location;
-            existingEvent.Distance = updatedEvent.Distance;
+            existingEvent.EventDate = updatedEvent.EventDate;
+            existingEvent.VenueId = updatedEvent.VenueId;
             existingEvent.EventType = updatedEvent.EventType;
+            existingEvent.Status = updatedEvent.Status;
 
             await _context.SaveChangesAsync();
             return Ok(existingEvent);
@@ -121,12 +164,13 @@ namespace RaceDay.Api.Controllers
                 existingEvent.BannerImageUrl = await _blobService.UploadFileAsync(bannerImage, container);
             }
 
-            existingEvent.Name = dto.Name;
+            existingEvent.Title = dto.Title;
             existingEvent.Description = dto.Description;
-            existingEvent.Date = dto.Date;
-            existingEvent.Location = dto.Location;
-            existingEvent.Distance = dto.Distance;
+            existingEvent.EventDate = dto.EventDate;
+            existingEvent.VenueId = await ResolveVenueIdAsync(dto.VenueId, dto.Location, existingEvent.VenueId);
             existingEvent.EventType = dto.EventType;
+            if (!string.IsNullOrWhiteSpace(dto.Status))
+                existingEvent.Status = dto.Status;
 
             await _context.SaveChangesAsync();
             return Ok(existingEvent);
@@ -149,6 +193,35 @@ namespace RaceDay.Api.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        private async Task<int> ResolveVenueIdAsync(int venueId, string? location, int fallbackVenueId = 0)
+        {
+            if (venueId > 0) return venueId;
+
+            if (!string.IsNullOrWhiteSpace(location))
+            {
+                var existing = await _context.Venues
+                    .FirstOrDefaultAsync(v => v.VenueName == location || v.City == location);
+                if (existing != null) return existing.VenueId;
+
+                var newVenue = new Venue
+                {
+                    VenueName = location,
+                    City = location,
+                    Province = "Gauteng",
+                    Latitude = -26.2041m,
+                    Longitude = 28.0473m
+                };
+                _context.Venues.Add(newVenue);
+                await _context.SaveChangesAsync();
+                return newVenue.VenueId;
+            }
+
+            if (fallbackVenueId > 0) return fallbackVenueId;
+
+            var firstVenue = await _context.Venues.FirstOrDefaultAsync();
+            return firstVenue?.VenueId ?? 1;
         }
     }
 }

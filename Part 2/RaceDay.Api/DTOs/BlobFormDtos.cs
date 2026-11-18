@@ -2,12 +2,13 @@ namespace RaceDay.Api.DTOs
 {
     public class EventFormDto
     {
-        public string Name { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public DateTime Date { get; set; }
-        public string Location { get; set; } = string.Empty;
-        public string Distance { get; set; } = string.Empty;
-        public string EventType { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
+        public string? Description { get; set; }
+        public DateTime EventDate { get; set; }
+        public int VenueId { get; set; }
+        public string? Location { get; set; }
+        public string EventType { get; set; } = "Running Marathon";
+        public string Status { get; set; } = "Upcoming";
         public int OrganiserId { get; set; }
     }
 }

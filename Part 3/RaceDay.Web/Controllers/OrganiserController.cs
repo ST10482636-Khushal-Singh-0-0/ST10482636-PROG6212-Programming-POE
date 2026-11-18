@@ -133,12 +133,12 @@ namespace RaceDay.Web.Controllers
             var organiserId = HttpContext.Session.GetInt32("UserId") ?? 0;
             var content = new MultipartFormDataContent
             {
-                { new StringContent(model.Name), "Name" },
+                { new StringContent(model.Name), "Title" },
                 { new StringContent(model.Description), "Description" },
-                { new StringContent(model.Date.ToString("o")), "Date" },
+                { new StringContent(model.Date.ToString("o")), "EventDate" },
                 { new StringContent(model.Location), "Location" },
-                { new StringContent(model.Distance), "Distance" },
                 { new StringContent(model.EventType), "EventType" },
+                { new StringContent("Upcoming"), "Status" },
                 { new StringContent(organiserId.ToString()), "OrganiserId" }
             };
 
