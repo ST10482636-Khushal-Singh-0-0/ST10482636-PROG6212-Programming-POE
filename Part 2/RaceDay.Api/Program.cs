@@ -32,6 +32,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddScoped<RaceDay.Api.Services.IBlobStorageService, RaceDay.Api.Services.BlobStorageService>();
 var app = builder.Build();
 
 // Enable Swagger UI for development and testing

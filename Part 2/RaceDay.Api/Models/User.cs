@@ -26,5 +26,7 @@ namespace RaceDay.Api.Models
 
         public ICollection<Event> OrganisedEvents { get; set; } = new List<Event>();
         public ICollection<Enrolment> Enrolments { get; set; } = new List<Enrolment>();
+
+        public string? ProfilePictureUrl { get; set; }
     }
 }

@@ -27,5 +27,7 @@ namespace RaceDay.Api.Models
         public string Status { get; set; } = "Upcoming";
 
         public ICollection<EventCategory> Categories { get; set; } = new List<EventCategory>();
+
+        public string? BannerImageUrl { get; set; }
     }
 }
