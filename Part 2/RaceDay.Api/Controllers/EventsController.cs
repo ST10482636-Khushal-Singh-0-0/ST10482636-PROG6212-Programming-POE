@@ -56,7 +56,16 @@ namespace RaceDay.Api.Controllers
                 Date = e.EventDate,
                 e.Status,
                 e.BannerImageUrl,
-                Categories = e.Categories
+                TotalEnrolments = _context.Enrolments.Count(en => en.Category != null && en.Category.EventId == e.EventId),
+                Categories = e.Categories.Select(c => new
+                {
+                    c.CategoryId,
+                    c.EventId,
+                    c.CategoryName,
+                    c.DistanceKm,
+                    c.EntryFee,
+                    c.MaxParticipants
+                })
             }));
         }
 
@@ -86,9 +95,19 @@ namespace RaceDay.Api.Controllers
                 Date = ev.EventDate,
                 ev.Status,
                 ev.BannerImageUrl,
-                Categories = ev.Categories
+                TotalEnrolments = _context.Enrolments.Count(en => en.Category != null && en.Category.EventId == ev.EventId),
+                Categories = ev.Categories.Select(c => new
+                {
+                    c.CategoryId,
+                    c.EventId,
+                    c.CategoryName,
+                    c.DistanceKm,
+                    c.EntryFee,
+                    c.MaxParticipants
+                })
             });
         }
+        
 
         // POST: api/events (Standard JSON endpoint from Part 2)
         [HttpPost]
