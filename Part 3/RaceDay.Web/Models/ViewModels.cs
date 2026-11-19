@@ -63,28 +63,36 @@ namespace RaceDay.Web.Models
     {
         public int Id { get; set; }
         public int CategoryId { get; set; }
-        public int EffectiveId => Id > 0 ? Id : CategoryId;
+        public int EffectiveId => CategoryId > 0 ? CategoryId : Id;
         public int EventId { get; set; }
-        [Required] public string Name { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public string CategoryName { get; set; } = string.Empty;
+        public string EffectiveName => !string.IsNullOrWhiteSpace(CategoryName) ? CategoryName : Name;
         public string? AgeGroup { get; set; }
         public string? Distance { get; set; }
+        public decimal DistanceKm { get; set; }
+        public decimal EntryFee { get; set; }
+        public int MaxParticipants { get; set; } = 500;
     }
 
     public class EnrolmentViewModel
     {
         public int Id { get; set; }
         public int EnrolmentId { get; set; }
-        public int EffectiveId => Id > 0 ? Id : EnrolmentId;
+        public int EffectiveId => EnrolmentId > 0 ? EnrolmentId : Id;
         public int EventId { get; set; }
         public string EventName { get; set; } = string.Empty;
+        public string EventTitle { get; set; } = string.Empty;
         public DateTime EventDate { get; set; }
         public int ParticipantId { get; set; }
         public string ParticipantName { get; set; } = string.Empty;
+        public string ParticipantEmail { get; set; } = string.Empty;
         public int CategoryId { get; set; }
         public string CategoryName { get; set; } = string.Empty;
+        public int RaceNumber { get; set; }
+        public string PaymentStatus { get; set; } = "Confirmed";
         public string Status { get; set; } = "Confirmed";
     }
-
     public class ResultViewModel
     {
         public int Id { get; set; }

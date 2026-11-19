@@ -5,43 +5,81 @@
     var role = HttpContextAccessor.HttpContext?.Session.GetString("UserRole");
 }
 
-<div class="card border-0 shadow-sm overflow-hidden">
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
     @if (!string.IsNullOrEmpty(Model.BannerImageUrl))
     {
         <img src="@Model.BannerImageUrl" class="card-img-top" style="max-height: 360px; object-fit: cover;" alt="@Model.Name Banner" />
     }
-    <div class="card-body p-4">
+    <div class="card-body p-4 p-md-5">
         <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="badge bg-dark">@Model.EventType</span>
+            <span class="badge bg-dark px-3 py-2">@Model.EventType</span>
             <span class="text-muted fw-semibold">@Model.Date.ToString("dddd, dd MMM yyyy")</span>
         </div>
         <h1 class="display-5 fw-bold">@Model.Name</h1>
-        <p class="text-muted mb-3"><strong>Location:</strong> @Model.Location | <strong>Distance:</strong> @Model.Distance</p>
+        <p class="text-muted mb-3">
+            <strong>Location:</strong> @Model.Location
+            @if (!string.IsNullOrWhiteSpace(Model.Distance))
+            {
+                <span> | <strong>Distance:</strong> @Model.Distance</span>
+            }
+        </p>
         <p class="lead">@Model.Description</p>
 
-        <hr />
+        <hr class="my-4" />
         <h4 class="fw-bold mb-3">Available Categories</h4>
-        @if (role == "Participant")
+
+        @if (Model.Categories == null || !Model.Categories.Any())
         {
-            <form asp-controller="Participant" asp-action="Enrol" method="post" class="row g-3 align-items-end">
-                <input type="hidden" name="eventId" value="@Model.EffectiveId" />
-                <div class="col-md-6">
-                    <label class="form-label fw-semibold">Select Race Category</label>
-                    <select name="categoryId" class="form-select" required>
+            <div class="alert alert-light border text-muted">No race categories have been published for this event yet.</div>
+        }
+        else
+        {
+            <div class="table-responsive mb-4">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Category</th>
+                            <th>Distance</th>
+                            <th>Entry Fee</th>
+                            <th>Capacity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         @foreach (var cat in Model.Categories)
                         {
-                            <option value="@cat.EffectiveId">@cat.Name (@cat.Distance @cat.AgeGroup)</option>
+                            <tr>
+                                <td class="fw-bold">@cat.EffectiveName</td>
+                                <td>@cat.DistanceKm km</td>
+                                <td>R @cat.EntryFee.ToString("F2")</td>
+                                <td>@cat.MaxParticipants athletes</td>
+                            </tr>
                         }
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <button type="submit" class="btn btn-raceday px-4 py-2">Enrol Immediately</button>
-                </div>
-            </form>
-        }
-        else if (string.IsNullOrEmpty(role))
-        {
-            <a asp-controller="Account" asp-action="Login" class="btn btn-raceday">Log in as Participant to Enrol</a>
+                    </tbody>
+                </table>
+            </div>
+
+            @if (role == "Participant")
+            {
+                <form asp-controller="Participant" asp-action="Enrol" method="post" class="row g-3 align-items-end bg-light p-3 rounded-3">
+                    <input type="hidden" name="eventId" value="@Model.EffectiveId" />
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Select Race Category</label>
+                        <select name="categoryId" class="form-select" required>
+                            @foreach (var cat in Model.Categories)
+                            {
+                                <option value="@cat.EffectiveId">@cat.EffectiveName (@cat.DistanceKm km &bull; R @cat.EntryFee.ToString("F2"))</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-raceday px-4 py-2">Enrol Immediately</button>
+                    </div>
+                </form>
+            }
+            else if (string.IsNullOrEmpty(role))
+            {
+                <a asp-controller="Account" asp-action="Login" class="btn btn-raceday px-4 py-2">Log in as Participant to Enrol</a>
+            }
         }
     </div>
 </div>

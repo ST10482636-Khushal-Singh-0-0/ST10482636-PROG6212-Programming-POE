@@ -15,9 +15,9 @@ namespace RaceDay.Web.Controllers
             {
                 events = await client.GetFromJsonAsync<List<EventViewModel>>("api/events") ?? new();
             }
-            catch
+            catch (Exception ex)
             {
-                ViewBag.ApiError = "Could not connect to RaceDay API. Make sure Part 2 API is running.";
+                ViewBag.ApiError = $"Could not connect to RaceDay API ({client.BaseAddress}api/events): {ex.Message}";
             }
 
             if (!string.IsNullOrWhiteSpace(search))
@@ -41,16 +41,12 @@ namespace RaceDay.Web.Controllers
             var ev = await client.GetFromJsonAsync<EventViewModel>($"api/events/{id}");
             if (ev == null) return NotFound();
 
-            try
-            {
-                events = await client.GetFromJsonAsync<List<EventViewModel>>("api/events") ?? new();
-            }
-            catch (Exception ex)
-            {
-                ViewBag.ApiError = $"API Connection Error ({client.BaseAddress}api/events): {ex.Message}";
-            }
-
             return View(ev);
+        }
+
+        public IActionResult Error()
+        {
+            return View();
         }
     }
 }

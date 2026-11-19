@@ -2,36 +2,37 @@
 @{ ViewData["Title"] = "Edit Event"; }
 
 <h1 class="fw-bold mb-4">Edit Event</h1>
-<div class="card border-0 shadow-sm p-4">
+<div class="card border-0 shadow-sm rounded-4 p-4">
     <form asp-action="EditEvent" method="post" enctype="multipart/form-data">
         <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="EventId" />
         <div class="row g-3">
             <div class="col-md-6">
-                <label asp-for="Name" class="form-label">Event Name</label>
+                <label asp-for="Name" class="form-label fw-semibold">Event Name</label>
                 <input asp-for="Name" class="form-control" required />
             </div>
             <div class="col-md-6">
-                <label asp-for="EventType" class="form-label">Event Type</label>
+                <label asp-for="EventType" class="form-label fw-semibold">Event Type</label>
                 <input asp-for="EventType" class="form-control" required />
             </div>
             <div class="col-md-4">
-                <label asp-for="Date" class="form-label">Event Date</label>
+                <label asp-for="Date" class="form-label fw-semibold">Event Date</label>
                 <input asp-for="Date" type="date" class="form-control" required />
             </div>
             <div class="col-md-4">
-                <label asp-for="Location" class="form-label">Location</label>
+                <label asp-for="Location" class="form-label fw-semibold">Location</label>
                 <input asp-for="Location" class="form-control" required />
             </div>
             <div class="col-md-4">
-                <label asp-for="Distance" class="form-label">Distance</label>
-                <input asp-for="Distance" class="form-control" required />
+                <label asp-for="Distance" class="form-label fw-semibold">Primary Distance (Optional)</label>
+                <input asp-for="Distance" class="form-control" placeholder="e.g. 21.1 km" />
             </div>
             <div class="col-12">
-                <label asp-for="Description" class="form-label">Description</label>
-                <textarea asp-for="Description" class="form-control" rows="3" required></textarea>
-            </div>
+                <label asp-for="Description" class="form-label fw-semibold">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+            </div>s
             <div class="col-12">
-                <label asp-for="BannerImage" class="form-label">Replace Banner Image (Optional)</label>
+                <label asp-for="BannerImage" class="form-label fw-semibold">Replace Banner Image (Optional)</label>
                 <input asp-for="BannerImage" type="file" class="form-control" accept="image/*" />
             </div>
         </div>

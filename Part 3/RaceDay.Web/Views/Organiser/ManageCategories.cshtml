@@ -3,34 +3,55 @@
 
 <h1 class="fw-bold mb-4">Manage Event Categories</h1>
 
-<div class="card border-0 shadow-sm p-4 mb-4">
+<div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
     <h5 class="fw-bold mb-3">Add New Category</h5>
     <form asp-action="AddCategory" method="post" class="row g-3">
         <input type="hidden" name="EventId" value="@ViewBag.EventId" />
         <div class="col-md-4">
-            <input type="text" name="Name" class="form-control" placeholder="Category Name (e.g. Open Men)" required />
+            <label class="form-label small fw-semibold">Category Name</label>
+            <input type="text" name="CategoryName" class="form-control" placeholder="e.g. Open Men 21km" required />
         </div>
-        <div class="col-md-3">
-            <input type="text" name="Distance" class="form-control" placeholder="Distance (e.g. 21km)" />
+        <div class="col-md-2">
+            <label class="form-label small fw-semibold">Distance (km)</label>
+            <input type="number" step="0.1" name="DistanceKm" class="form-control" placeholder="21.1" required />
         </div>
-        <div class="col-md-3">
-            <input type="text" name="AgeGroup" class="form-control" placeholder="Age Group (e.g. 18-39)" />
+        <div class="col-md-2">
+            <label class="form-label small fw-semibold">Entry Fee (R)</label>
+            <input type="number" step="0.01" name="EntryFee" class="form-control" value="250" required />
         </div>
-        <div class="col-md-2 d-grid">
-            <button type="submit" class="btn btn-raceday">Add</button>
+        <div class="col-md-2">
+            <label class="form-label small fw-semibold">Max Athletes</label>
+            <input type="number" name="MaxParticipants" class="form-control" value="500" required />
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+            <button type="submit" class="btn btn-raceday w-100">Add Category</button>
         </div>
     </form>
 </div>
 
-<div class="bg-white rounded shadow-sm p-3">
-    <table class="table mb-0">
+<div class="bg-white rounded-4 shadow-sm p-3">
+    <table class="table table-hover align-middle mb-0">
         <thead class="table-dark">
-            <tr><th>Category</th><th>Distance</th><th>Age Group</th></tr>
+            <tr>
+                <th>Category</th>
+                <th>Distance</th>
+                <th>Entry Fee</th>
+                <th>Capacity</th>
+            </tr>
         </thead>
         <tbody>
+            @if (!Model.Any())
+            {
+                <tr><td colspan="4" class="text-center text-muted py-4">No categories added yet. Add your first race distance above.</td></tr>
+            }
             @foreach (var c in Model)
             {
-                <tr><td>@c.Name</td><td>@c.Distance</td><td>@c.AgeGroup</td></tr>
+                <tr>
+                    <td class="fw-bold">@c.EffectiveName</td>
+                    <td>@c.DistanceKm km</td>
+                    <td>R @c.EntryFee.ToString("F2")</td>
+                    <td>@c.MaxParticipants</td>
+                </tr>
             }
         </tbody>
     </table>
