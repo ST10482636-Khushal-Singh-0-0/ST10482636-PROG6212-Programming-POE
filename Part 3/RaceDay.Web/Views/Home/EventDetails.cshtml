@@ -76,7 +76,13 @@
                     </div>
                 </form>
             }
-            else if (string.IsNullOrEmpty(role))
+            else if (role == "Organiser")
+            {
+                <div class="alert alert-info mb-0">
+                    You are currently signed in as an <strong>Organiser</strong>. Log out and sign in with a <strong>Participant</strong> account to enrol in this race.
+                </div>
+            }
+            else
             {
                 <a asp-controller="Account" asp-action="Login" class="btn btn-raceday px-4 py-2">Log in as Participant to Enrol</a>
             }
