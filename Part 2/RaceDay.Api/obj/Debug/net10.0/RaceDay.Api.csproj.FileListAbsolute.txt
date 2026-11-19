@@ -509,3 +509,4 @@ C:\Users\emeris\Desktop\PROG6212\POE\ST10482636-PROG6212-Programming POE\Part 2\
 C:\Users\emeris\Desktop\PROG6212\POE\ST10482636-PROG6212-Programming POE\Part 2\RaceDay.Api\bin\Debug\net10.0\Azure.Storage.Blobs.dll
 C:\Users\emeris\Desktop\PROG6212\POE\ST10482636-PROG6212-Programming POE\Part 2\RaceDay.Api\bin\Debug\net10.0\Azure.Storage.Common.dll
 C:\Users\emeris\Desktop\PROG6212\POE\ST10482636-PROG6212-Programming POE\Part 2\RaceDay.Api\bin\Debug\net10.0\System.IO.Hashing.dll
+C:\Users\emeris\Desktop\PROG6212\POE\ST10482636-PROG6212-Programming POE\Part 2\RaceDay.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
