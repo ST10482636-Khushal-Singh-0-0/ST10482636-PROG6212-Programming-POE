@@ -47,10 +47,10 @@ namespace RaceDay.Web.Models
         public int EffectiveId => Id > 0 ? Id : EventId;
 
         [Required] public string Name { get; set; } = string.Empty;
-        [Required] public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; } = string.Empty;
         [Required] public DateTime Date { get; set; } = DateTime.Now.AddDays(14);
         [Required] public string Location { get; set; } = string.Empty;
-        [Required] public string Distance { get; set; } = string.Empty;
+        public string? Distance { get; set; } = string.Empty;
         [Required] public string EventType { get; set; } = string.Empty;
         public int OrganiserId { get; set; }
         public string? BannerImageUrl { get; set; }

@@ -43,9 +43,12 @@ namespace RaceDay.Web.Controllers
 
             try
             {
-                ev.Categories = await client.GetFromJsonAsync<List<CategoryViewModel>>($"api/categories/event/{id}") ?? new();
+                events = await client.GetFromJsonAsync<List<EventViewModel>>("api/events") ?? new();
             }
-            catch { }
+            catch (Exception ex)
+            {
+                ViewBag.ApiError = $"API Connection Error ({client.BaseAddress}api/events): {ex.Message}";
+            }
 
             return View(ev);
         }

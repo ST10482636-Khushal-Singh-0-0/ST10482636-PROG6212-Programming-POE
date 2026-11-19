@@ -14,8 +14,18 @@ namespace RaceDay.Web.Controllers
         {
             var client = CreateAuthorizedClient();
             var organiserId = HttpContext.Session.GetInt32("UserId");
-            var allEvents = await client.GetFromJsonAsync<List<EventViewModel>>("api/events") ?? new();
-            var myEvents = allEvents.Where(e => e.OrganiserId == organiserId).ToList();
+            List<EventViewModel> myEvents = new();
+
+            try
+            {
+                var allEvents = await client.GetFromJsonAsync<List<EventViewModel>>("api/events") ?? new();
+                myEvents = allEvents.Where(e => e.OrganiserId == organiserId).ToList();
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Unable to load dashboard events: {ex.Message}";
+            }
+
             return View(myEvents);
         }
 
