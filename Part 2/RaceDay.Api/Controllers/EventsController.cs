@@ -199,8 +199,24 @@ namespace RaceDay.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEvent(int id)
         {
-            var ev = await _context.Events.FindAsync(id);
-            if (ev == null) return NotFound();
+            var ev = await _context.Events
+                .Include(e => e.Categories)
+                    .ThenInclude(c => c.Enrolments)
+                        .ThenInclude(en => en.Result)
+                .FirstOrDefaultAsync(e => e.EventId == id);
+
+            if (ev == null) return NotFound(new { message = "Event not found." });
+
+            foreach (var category in ev.Categories)
+            {
+                foreach (var enrolment in category.Enrolments)
+                {
+                    if (enrolment.Result != null)
+                        _context.Results.Remove(enrolment.Result);
+                }
+                _context.Enrolments.RemoveRange(category.Enrolments);
+            }
+            _context.EventCategories.RemoveRange(ev.Categories);
 
             if (!string.IsNullOrEmpty(ev.BannerImageUrl))
             {

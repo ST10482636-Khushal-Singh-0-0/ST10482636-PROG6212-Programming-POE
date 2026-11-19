@@ -84,8 +84,18 @@ namespace RaceDay.Web.Controllers
         public async Task<IActionResult> DeleteEvent(int id)
         {
             var client = CreateAuthorizedClient();
-            await client.DeleteAsync($"api/events/{id}");
-            TempData["Success"] = "Event deleted.";
+            var response = await client.DeleteAsync($"api/events/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["Success"] = "Event deleted.";
+            }
+            else
+            {
+                var err = await response.Content.ReadAsStringAsync();
+                TempData["Error"] = $"Could not delete event ({response.StatusCode}): {err}";
+            }
+
             return RedirectToAction(nameof(Dashboard));
         }
 
@@ -93,7 +103,15 @@ namespace RaceDay.Web.Controllers
         public async Task<IActionResult> ManageCategories(int eventId)
         {
             var client = CreateAuthorizedClient();
-            var categories = await client.GetFromJsonAsync<List<CategoryViewModel>>($"api/categories/event/{eventId}") ?? new();
+            List<CategoryViewModel> categories = new();
+            try
+            {
+                categories = await client.GetFromJsonAsync<List<CategoryViewModel>>($"api/events/{eventId}/categories") ?? new();
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Could not load categories: {ex.Message}";
+            }
             ViewBag.EventId = eventId;
             return View(categories);
         }
@@ -102,8 +120,18 @@ namespace RaceDay.Web.Controllers
         public async Task<IActionResult> AddCategory(CategoryViewModel model)
         {
             var client = CreateAuthorizedClient();
-            await client.PostAsJsonAsync("api/categories", model);
-            TempData["Success"] = "Category added!";
+            var payload = new
+            {
+                CategoryName = string.IsNullOrWhiteSpace(model.CategoryName) ? model.Name : model.CategoryName,
+                DistanceKm = model.DistanceKm > 0 ? model.DistanceKm : 10m,
+                EntryFee = model.EntryFee,
+                MaxParticipants = model.MaxParticipants > 0 ? model.MaxParticipants : 500
+            };
+
+            var response = await client.PostAsJsonAsync($"api/events/{model.EventId}/categories", payload);
+            TempData[response.IsSuccessStatusCode ? "Success" : "Error"] =
+                response.IsSuccessStatusCode ? "Category added!" : $"Failed to add category ({response.StatusCode}).";
+
             return RedirectToAction(nameof(ManageCategories), new { eventId = model.EventId });
         }
 
@@ -144,7 +172,7 @@ namespace RaceDay.Web.Controllers
             var content = new MultipartFormDataContent
             {
                 { new StringContent(model.Name), "Title" },
-                { new StringContent(model.Description), "Description" },
+                { new StringContent(model.Description ?? string.Empty), "Description" },
                 { new StringContent(model.Date.ToString("o")), "EventDate" },
                 { new StringContent(model.Location), "Location" },
                 { new StringContent(model.EventType), "EventType" },

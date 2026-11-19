@@ -14,34 +14,50 @@ namespace RaceDay.Web.Controllers
         public async Task<IActionResult> Enrol(int eventId, int categoryId)
         {
             var client = CreateAuthorizedClient();
-            var participantId = HttpContext.Session.GetInt32("UserId");
 
             var response = await client.PostAsJsonAsync("api/enrolments", new
             {
-                EventId = eventId,
-                CategoryId = categoryId,
-                ParticipantId = participantId
+                CategoryId = categoryId
             });
 
-            TempData[response.IsSuccessStatusCode ? "Success" : "Error"] =
-                response.IsSuccessStatusCode ? "You are enrolled!" : "Could not complete enrolment.";
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["Success"] = "You are enrolled! Your race number has been assigned.";
+                return RedirectToAction(nameof(MyEnrolments));
+            }
 
-            return RedirectToAction(nameof(MyEnrolments));
+            var errBody = await response.Content.ReadAsStringAsync();
+            TempData["Error"] = $"Could not complete enrolment: {errBody}";
+            return RedirectToAction("EventDetails", "Home", new { id = eventId });
         }
 
         public async Task<IActionResult> MyEnrolments()
         {
             var client = CreateAuthorizedClient();
-            var participantId = HttpContext.Session.GetInt32("UserId");
-            var enrolments = await client.GetFromJsonAsync<List<EnrolmentViewModel>>($"api/enrolments/user/{participantId}") ?? new();
+            List<EnrolmentViewModel> enrolments = new();
+            try
+            {
+                enrolments = await client.GetFromJsonAsync<List<EnrolmentViewModel>>("api/enrolments/my-entries") ?? new();
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Unable to load your enrolments: {ex.Message}";
+            }
             return View(enrolments);
         }
 
         public async Task<IActionResult> MyResults()
         {
             var client = CreateAuthorizedClient();
-            var participantId = HttpContext.Session.GetInt32("UserId");
-            var results = await client.GetFromJsonAsync<List<ResultViewModel>>($"api/results/user/{participantId}") ?? new();
+            List<ResultViewModel> results = new();
+            try
+            {
+                results = await client.GetFromJsonAsync<List<ResultViewModel>>("api/results/my-history") ?? new();
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Unable to load your race results: {ex.Message}";
+            }
             return View(results);
         }
 

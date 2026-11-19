@@ -18,11 +18,25 @@ namespace RaceDay.Api.Controllers
             _context = context;
         }
 
+        private int GetCurrentUserId()
+        {
+            var sessionUserId = HttpContext.Session.GetInt32("UserId");
+            if (sessionUserId.HasValue) return sessionUserId.Value;
+
+            if (Request.Headers.TryGetValue("X-User-Id", out var idHeader) &&
+                int.TryParse(idHeader, out int parsedId))
+            {
+                return parsedId;
+            }
+
+            throw new UnauthorizedAccessException("User ID not found in session or headers.");
+        }
+
         [HttpPost]
         [AuthorizeRole("Participant")]
         public async Task<IActionResult> Enrol([FromBody] CreateEnrolmentDto dto)
         {
-            int participantId = HttpContext.Session.GetInt32("UserId")!.Value;
+            int participantId = GetCurrentUserId();
 
             var category = await _context.EventCategories
                 .Include(c => c.Enrolments)
@@ -30,15 +44,12 @@ namespace RaceDay.Api.Controllers
 
             if (category == null) return NotFound(new { message = "Category not found." });
 
-            // Check if user is already enrolled
             bool alreadyEnrolled = category.Enrolments.Any(e => e.ParticipantId == participantId);
             if (alreadyEnrolled) return Conflict(new { message = "You are already enrolled in this category." });
 
-            // Check capacity limit
             if (category.Enrolments.Count >= category.MaxParticipants)
                 return BadRequest(new { message = "This category has reached maximum participant capacity." });
 
-            // Generate next available race number
             int nextRaceNumber = category.Enrolments.Count == 0
                 ? (category.CategoryId * 1000) + 1
                 : category.Enrolments.Max(e => e.RaceNumber) + 1;
@@ -61,7 +72,7 @@ namespace RaceDay.Api.Controllers
         [AuthorizeRole("Participant")]
         public async Task<IActionResult> GetMyEntries()
         {
-            int participantId = HttpContext.Session.GetInt32("UserId")!.Value;
+            int participantId = GetCurrentUserId();
 
             var entries = await _context.Enrolments
                 .Where(e => e.ParticipantId == participantId)
@@ -81,6 +92,32 @@ namespace RaceDay.Api.Controllers
                 .ToListAsync();
 
             return Ok(entries);
+        }
+
+        // GET: api/enrolments/event/5 (Organiser view of enrolled athletes)
+        [HttpGet("event/{eventId}")]
+        [AuthorizeRole("Organiser")]
+        public async Task<IActionResult> GetEventEnrolments(int eventId)
+        {
+            var enrolments = await _context.Enrolments
+                .Include(e => e.Participant)
+                .Include(e => e.Category)
+                .Where(e => e.Category != null && e.Category.EventId == eventId)
+                .OrderBy(e => e.RaceNumber)
+                .Select(e => new
+                {
+                    e.EnrolmentId,
+                    Id = e.EnrolmentId,
+                    e.RaceNumber,
+                    e.PaymentStatus,
+                    e.EnrolmentDate,
+                    ParticipantName = e.Participant != null ? e.Participant.FullName : "Athlete",
+                    ParticipantEmail = e.Participant != null ? e.Participant.Email : "",
+                    CategoryName = e.Category != null ? e.Category.CategoryName : "General"
+                })
+                .ToListAsync();
+
+            return Ok(enrolments);
         }
     }
 }

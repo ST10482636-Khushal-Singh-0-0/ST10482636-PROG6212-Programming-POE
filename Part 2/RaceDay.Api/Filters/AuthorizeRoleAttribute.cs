@@ -15,9 +15,21 @@ namespace RaceDay.Api.Filters
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-            var session = context.HttpContext.Session;
+            var httpContext = context.HttpContext;
+            var session = httpContext.Session;
+
             string? role = session.GetString("UserRole");
             int? userId = session.GetInt32("UserId");
+
+            // Fallback to headers sent by RaceDay.Web server-to-server HttpClient
+            if ((!userId.HasValue || string.IsNullOrEmpty(role)) &&
+                httpContext.Request.Headers.TryGetValue("X-User-Id", out var idHeader) &&
+                int.TryParse(idHeader, out int parsedId) &&
+                httpContext.Request.Headers.TryGetValue("X-User-Role", out var roleHeader))
+            {
+                userId = parsedId;
+                role = roleHeader.ToString();
+            }
 
             // 1. Check if user is logged in
             if (!userId.HasValue || string.IsNullOrEmpty(role))

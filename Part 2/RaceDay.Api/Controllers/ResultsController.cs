@@ -72,7 +72,8 @@ namespace RaceDay.Api.Controllers
         [AuthorizeRole("Participant")]
         public async Task<IActionResult> GetMyHistory()
         {
-            int participantId = HttpContext.Session.GetInt32("UserId")!.Value;
+            int participantId = HttpContext.Session.GetInt32("UserId")
+                ?? (Request.Headers.TryGetValue("X-User-Id", out var h) && int.TryParse(h, out var id) ? id : 0);
 
             var history = await _context.Results
                 .Include(r => r.Enrolment)
