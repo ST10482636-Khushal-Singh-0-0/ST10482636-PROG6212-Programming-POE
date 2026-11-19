@@ -84,8 +84,18 @@ namespace RaceDay.Web.Controllers
         public async Task<IActionResult> DeleteEvent(int id)
         {
             var client = CreateAuthorizedClient();
-            await client.DeleteAsync($"api/events/{id}");
-            TempData["Success"] = "Event deleted.";
+            var response = await client.DeleteAsync($"api/events/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["Success"] = "Event deleted.";
+            }
+            else
+            {
+                var err = await response.Content.ReadAsStringAsync();
+                TempData["Error"] = $"Could not delete event ({response.StatusCode}): {err}";
+            }
+
             return RedirectToAction(nameof(Dashboard));
         }
 
