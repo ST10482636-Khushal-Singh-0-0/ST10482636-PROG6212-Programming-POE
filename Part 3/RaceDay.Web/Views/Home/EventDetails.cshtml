@@ -1,0 +1,47 @@
+@model RaceDay.Web.Models.EventViewModel
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = Model.Name;
+    var role = HttpContextAccessor.HttpContext?.Session.GetString("UserRole");
+}
+
+<div class="card border-0 shadow-sm overflow-hidden">
+    @if (!string.IsNullOrEmpty(Model.BannerImageUrl))
+    {
+        <img src="@Model.BannerImageUrl" class="card-img-top" style="max-height: 360px; object-fit: cover;" alt="@Model.Name Banner" />
+    }
+    <div class="card-body p-4">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="badge bg-dark">@Model.EventType</span>
+            <span class="text-muted fw-semibold">@Model.Date.ToString("dddd, dd MMM yyyy")</span>
+        </div>
+        <h1 class="display-5 fw-bold">@Model.Name</h1>
+        <p class="text-muted mb-3"><strong>Location:</strong> @Model.Location | <strong>Distance:</strong> @Model.Distance</p>
+        <p class="lead">@Model.Description</p>
+
+        <hr />
+        <h4 class="fw-bold mb-3">Available Categories</h4>
+        @if (role == "Participant")
+        {
+            <form asp-controller="Participant" asp-action="Enrol" method="post" class="row g-3 align-items-end">
+                <input type="hidden" name="eventId" value="@Model.EffectiveId" />
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Select Race Category</label>
+                    <select name="categoryId" class="form-select" required>
+                        @foreach (var cat in Model.Categories)
+                        {
+                            <option value="@cat.EffectiveId">@cat.Name (@cat.Distance @cat.AgeGroup)</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-raceday px-4 py-2">Enrol Immediately</button>
+                </div>
+            </form>
+        }
+        else if (string.IsNullOrEmpty(role))
+        {
+            <a asp-controller="Account" asp-action="Login" class="btn btn-raceday">Log in as Participant to Enrol</a>
+        }
+    </div>
+</div>

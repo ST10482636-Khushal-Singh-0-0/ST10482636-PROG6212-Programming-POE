@@ -1,0 +1,36 @@
+@model List<RaceDay.Web.Models.ResultViewModel>
+@{
+    ViewData["Title"] = "My Results";
+    string FormatOrdinal(int num) => (num % 100) switch
+    {
+        11 or 12 or 13 => $"{num}th",
+        _ => (num % 10) switch { 1 => $"{num}st", 2 => $"{num}nd", 3 => $"{num}rd", _ => $"{num}th" }
+    };
+}
+
+<h1 class="fw-bold mb-4">My Race History &amp; Results</h1>
+<div class="table-responsive bg-white shadow-sm rounded p-3">
+    <table class="table align-middle mb-0">
+        <thead class="table-dark">
+            <tr>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Finish Time</th>
+                <th>Finishing Position</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var r in Model)
+            {
+                <tr>
+                    <td class="fw-semibold">@r.EventName</td>
+                    <td>@r.EventDate.ToString("dd MMM yyyy")</td>
+                    <td>@r.CategoryName</td>
+                    <td class="fw-bold text-primary">@r.FinishTime</td>
+                    <td>@FormatOrdinal(r.Position) out of @r.TotalFinishers finishers</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

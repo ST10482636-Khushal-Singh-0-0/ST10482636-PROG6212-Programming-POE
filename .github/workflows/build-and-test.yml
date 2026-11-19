@@ -1,33 +1,30 @@
-name: RaceDay Part 2 CI/CD Pipeline
+name: Build and Test RaceDay Solution
 
 on:
   push:
-    branches: [ "main", "master", "part-2" ]
+    branches: [ main, master, part-3 ]
   pull_request:
-    branches: [ "main", "master", "part-2" ]
+    branches: [ main, master, part-3 ]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: |
-          8.0.x
-          9.0.x
-          10.0.x
-        include-prerelease: true
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
 
-    - name: Restore Dependencies
-      run: dotnet restore "./Part 2/RaceDay.slnx"
+      - name: Restore & Build Part 2 API
+        run: |
+          dotnet restore "Part 2/RaceDay.Api/RaceDay.Api.csproj"
+          dotnet build "Part 2/RaceDay.Api/RaceDay.Api.csproj" --no-restore --configuration Release
 
-    - name: Build Solution
-      run: dotnet build "./Part 2/RaceDay.slnx" --no-restore --configuration Release
-
-    - name: Run xUnit Unit Tests
-      run: dotnet test "./Part 2/RaceDay.Tests/RaceDay.Tests.csproj" --no-build --configuration Release --verbosity normal --logger "console;verbosity=detailed"
+      - name: Restore & Build Part 3 MVC Web App
+        run: |
+          dotnet restore "Part 3/RaceDay.Web/RaceDay.Web.csproj"
+          dotnet build "Part 3/RaceDay.Web/RaceDay.Web.csproj" --no-restore --configuration Release

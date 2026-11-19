@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\RaceDay.Tests.csproj": {}
+    "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Tests\\RaceDay.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\RaceDay.Api.csproj": {
+    "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Api\\RaceDay.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\RaceDay.Api.csproj",
+        "projectUniqueName": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Api\\RaceDay.Api.csproj",
         "projectName": "RaceDay.Api",
-        "projectPath": "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\RaceDay.Api.csproj",
+        "projectPath": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Api\\RaceDay.Api.csproj",
         "packagesPath": "C:\\Users\\emeris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\obj\\",
+        "outputPath": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -56,6 +56,10 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.30.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
               "version": "[10.0.*, )"
@@ -510,14 +514,14 @@
         }
       }
     },
-    "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\RaceDay.Tests.csproj": {
+    "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Tests\\RaceDay.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\RaceDay.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Tests\\RaceDay.Tests.csproj",
         "projectName": "RaceDay.Tests",
-        "projectPath": "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\RaceDay.Tests.csproj",
+        "projectPath": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Tests\\RaceDay.Tests.csproj",
         "packagesPath": "C:\\Users\\emeris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Tests\\obj\\",
+        "outputPath": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -539,8 +543,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\RaceDay.Api.csproj": {
-                "projectPath": "C:\\Users\\emeris\\source\\repos\\ST10482636-PROG6212-Programming POE\\docs\\RaceDay.Api\\RaceDay.Api.csproj"
+              "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Api\\RaceDay.Api.csproj": {
+                "projectPath": "C:\\Users\\emeris\\Desktop\\PROG6212\\POE\\ST10482636-PROG6212-Programming POE\\Part 2\\RaceDay.Api\\RaceDay.Api.csproj"
               }
             }
           }

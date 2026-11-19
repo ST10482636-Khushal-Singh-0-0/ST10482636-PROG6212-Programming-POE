@@ -1,0 +1,40 @@
+@model RaceDay.Web.Models.RegisterViewModel
+@{ ViewData["Title"] = "Register"; }
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm p-4">
+            <h2 class="fw-bold mb-3">Create Your RaceDay Account</h2>
+            <form asp-action="Register" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label">Full Name</label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="PhoneNumber" class="form-label">Phone Number</label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Role" class="form-label">Account Role</label>
+                    <select asp-for="Role" class="form-select">
+                        <option value="Participant">Participant (Enter Races)</option>
+                        <option value="Organiser">Event Organiser (Host Races)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-raceday w-100 py-2">Create Account</button>
+            </form>
+        </div>
+    </div>
+</div>
