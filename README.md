@@ -9,7 +9,7 @@ RaceDay is a full-stack ASP.NET Core (.NET 10) web platform connecting race Orga
 - **CI/CD (`.github/workflows/build-and-test.yml`)**: Automated GitHub Actions workflow building both the Part 2 API and Part 3 MVC projects on every push and pull request.
 
 ## Demo Video
-- **Unlisted YouTube Demonstration**: `[PASTE_YOUR_YOUTUBE_LINK_HERE]`
+- **Unlisted YouTube Demonstration**: `https://youtu.be/dhFnPcmsRHU?si=ynsu6quW4bWnNtyA`
 
 ## Running the Application Locally
 1. Ensure SQL Server (`localhost\SQLEXPRESS`) is running and `Part 2/RaceDay.Api/appsettings.json` contains valid `DefaultConnection` and `AzureBlobStorage` connection strings.
